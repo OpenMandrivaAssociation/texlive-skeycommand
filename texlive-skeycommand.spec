@@ -47,6 +47,7 @@ the user of skeycommand.
 %doc %{_texmfdistdir}/doc/latex/skeycommand/README
 %doc %{_texmfdistdir}/doc/latex/skeycommand/skeycommand-guide.pdf
 %doc %{_texmfdistdir}/doc/latex/skeycommand/skeycommand-guide.tex
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -57,3 +58,5 @@ the user of skeycommand.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
