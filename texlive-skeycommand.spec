@@ -1,11 +1,11 @@
-# revision 18493
+# revision 24652
 # category Package
 # catalog-ctan /macros/latex/contrib/skeycommand
-# catalog-date 2010-06-06 13:50:32 +0200
+# catalog-date 2011-11-20 11:43:03 +0100
 # catalog-license lppl1.3
-# catalog-version 0.3
+# catalog-version 0.4
 Name:		texlive-skeycommand
-Version:	0.3
+Version:	0.4
 Release:	1
 Summary:	Create commands using parameters and keyval in parallel
 Group:		Publishing
@@ -17,35 +17,34 @@ BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
-Conflicts:	texlive-texmf <= 20110705-3
-Conflicts:	texlive-doc <= 20110705-3
 
 %description
 The package provides tools for defining LaTeX commands and
 environments using combinations of parameters and keys. All the
-facilities of the xkeyval and skeyval packages are available to
+facilities of the ltxkeys and skeyval packages are available to
 the user of skeycommand.
 
 %pre
-    %_texmf_mktexlsr_pre
+    %{_sbindir}/texlive.post
 
 %post
-    %_texmf_mktexlsr_post
+    %{_sbindir}/texlive.post
 
 %preun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_pre
+	%{_sbindir}/texlive.post
     fi
 
 %postun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_post
+	%{_sbindir}/texlive.post
     fi
 
 #-----------------------------------------------------------------------
 %files
 %{_texmfdistdir}/tex/latex/skeycommand/skeycommand.sty
 %doc %{_texmfdistdir}/doc/latex/skeycommand/README
+%doc %{_texmfdistdir}/doc/latex/skeycommand/skeycommand-guide.cfg
 %doc %{_texmfdistdir}/doc/latex/skeycommand/skeycommand-guide.pdf
 %doc %{_texmfdistdir}/doc/latex/skeycommand/skeycommand-guide.tex
 %doc %{_tlpkgobjdir}/*.tlpobj
