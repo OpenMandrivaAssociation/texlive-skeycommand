@@ -24,16 +24,8 @@ environments using combinations of parameters and keys. All the
 facilities of the ltxkeys and skeyval packages are available to
 the user of skeycommand.
 
-%pre
-    %{_sbindir}/texlive.post
-
 %post
     %{_sbindir}/texlive.post
-
-%preun
-    if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-    fi
 
 %postun
     if [ $1 -eq 0 ]; then
@@ -47,7 +39,6 @@ the user of skeycommand.
 %doc %{_texmfdistdir}/doc/latex/skeycommand/skeycommand-guide.cfg
 %doc %{_texmfdistdir}/doc/latex/skeycommand/skeycommand-guide.pdf
 %doc %{_texmfdistdir}/doc/latex/skeycommand/skeycommand-guide.tex
-%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -58,5 +49,3 @@ the user of skeycommand.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
-mkdir -p %{buildroot}%{_tlpkgobjdir}
-cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
