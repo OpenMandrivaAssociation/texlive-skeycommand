@@ -49,3 +49,21 @@ the user of skeycommand.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
+
+
+%changelog
+* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 0.4-2
++ Revision: 756065
+- Rebuild to reduce used resources
+
+* Fri Dec 09 2011 Paulo Andrade <pcpa@mandriva.com.br> 0.4-1
++ Revision: 739877
+- texlive-skeycommand
+
+* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 0.3-1
++ Revision: 719547
+- texlive-skeycommand
+- texlive-skeycommand
+- texlive-skeycommand
+- texlive-skeycommand
+
