@@ -6,7 +6,7 @@
 # catalog-version 0.4
 Name:		texlive-skeycommand
 Version:	0.4
-Release:	7
+Release:	8
 Summary:	Create commands using parameters and keyval in parallel
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/skeycommand
