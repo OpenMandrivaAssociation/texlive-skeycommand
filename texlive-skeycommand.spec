@@ -1,6 +1,6 @@
 Name:		texlive-skeycommand
 Version:	24652
-Release:	1
+Release:	2
 Summary:	Create commands using parameters and keyval in parallel
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/skeycommand
