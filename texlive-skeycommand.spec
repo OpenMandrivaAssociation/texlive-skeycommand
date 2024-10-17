@@ -3,7 +3,7 @@ Version:	24652
 Release:	2
 Summary:	Create commands using parameters and keyval in parallel
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/skeycommand
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/skeycommand
 License:	LPPL1.3
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/skeycommand.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/skeycommand.doc.r%{version}.tar.xz
