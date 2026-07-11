@@ -1,45 +1,22 @@
-Name:		texlive-skeycommand
-Version:	24652
-Release:	2
+%global tl_name skeycommand
+%global tl_revision 24652
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	0.4
+Release:	%{tl_revision}.1
 Summary:	Create commands using parameters and keyval in parallel
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/skeycommand
-License:	LPPL1.3
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/skeycommand.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/skeycommand.doc.r%{version}.tar.xz
+License:	lppl1.3
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/skeycommand.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/skeycommand.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-The package provides tools for defining LaTeX commands and
-environments using combinations of parameters and keys. All the
-facilities of the ltxkeys and skeyval packages are available to
-the user of skeycommand.
+The package provides tools for defining LaTeX commands and environments
+using combinations of parameters and keys. All the facilities of the
+ltxkeys and skeyval packages are available to the user of skeycommand.
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/tex/latex/skeycommand/skeycommand.sty
-%doc %{_texmfdistdir}/doc/latex/skeycommand/README
-%doc %{_texmfdistdir}/doc/latex/skeycommand/skeycommand-guide.cfg
-%doc %{_texmfdistdir}/doc/latex/skeycommand/skeycommand-guide.pdf
-%doc %{_texmfdistdir}/doc/latex/skeycommand/skeycommand-guide.tex
-
-#-----------------------------------------------------------------------
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar tex doc %{buildroot}%{_texmfdistdir}
